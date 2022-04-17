@@ -592,6 +592,7 @@ export class MathfieldElement extends HTMLElement implements Mathfield {
       'virtual-keyboards': 'string',
       'use-shared-virtual-keyboard': 'boolean',
       'shared-virtual-keyboard-target-origin': 'string',
+      'aries-is-load-font': 'boolean',
     };
   }
 

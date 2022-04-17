@@ -263,7 +263,8 @@ export class MathfieldPrivate implements Mathfield {
     }
 
     // Load the fonts, inject the core and mathfield stylesheets
-    void loadFonts(this.options.fontsDirectory, this.options.onError);
+    options.ariesIsLoadFont &&
+      void loadFonts(this.options.fontsDirectory, this.options.onError);
     if (!CORE_STYLESHEET_HASH) {
       CORE_STYLESHEET_HASH = hashCode(CORE_STYLESHEET).toString(36);
     }

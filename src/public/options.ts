@@ -966,6 +966,10 @@ export type CoreOptions = {
   // @todo https://github.com/microsoft/TypeScript/issues/30024
 };
 
+export type AriesCustomOptions = {
+  ariesIsLoadFont: boolean;
+};
+
 /**
  * @keywords security, trust, sanitize, errors
  */
@@ -978,6 +982,7 @@ export type MathfieldOptions = LayoutOptions &
   TextToSpeechOptions &
   CoreOptions &
   MathfieldHooks &
+  AriesCustomOptions &
   MathfieldListeners & {
     /**
      * When true, use a shared virtual keyboard for all the mathfield

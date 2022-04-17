@@ -382,6 +382,7 @@ export function getDefault(): Required<MathfieldOptionsPrivate> {
 
     onError: (): void => {},
     value: '',
+    ariesIsLoadFont: true,
   };
 }
 
