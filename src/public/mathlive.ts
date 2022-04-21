@@ -23,3 +23,4 @@ export * from './core';
 export * from './options';
 export * from './mathfield';
 export * from './mathfield-element';
+export { MathfieldPrivate } from '../editor-mathfield/mathfield-private';

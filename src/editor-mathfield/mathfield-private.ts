@@ -564,7 +564,10 @@ export class MathfieldPrivate implements Mathfield {
     // (the selection highlighting may be out of date due to the HTML layout
     // having been updated with the new font metrics)
     if (isBrowser()) {
-      document.fonts.ready.then(() => render(this));
+      // @wenyufei document.fonts.ready.then compatible
+      if (document.fonts.ready.then) {
+        document.fonts.ready?.then(() => render(this));
+      }
     }
   }
 

@@ -57,24 +57,26 @@ export function osPlatform():
 }
 
 export function supportRegexPropertyEscape(): boolean {
-  if (!isBrowser()) return true;
+  // @wenyufei Regex compatible
+  return false;
+  // if (!isBrowser()) return true;
 
-  if (/firefox/i.test(navigator.userAgent)) {
-    const m = navigator.userAgent.match(/firefox\/(\d+)/i);
-    if (!m) return false;
-    const version = parseInt(m[1]);
-    return version >= 78; // https://www.mozilla.org/en-US/firefox/78.0/releasenotes/
-  }
-  if (/trident/i.test(navigator.userAgent)) return false;
+  // if (/firefox/i.test(navigator.userAgent)) {
+  //   const m = navigator.userAgent.match(/firefox\/(\d+)/i);
+  //   if (!m) return false;
+  //   const version = parseInt(m[1]);
+  //   return version >= 78; // https://www.mozilla.org/en-US/firefox/78.0/releasenotes/
+  // }
+  // if (/trident/i.test(navigator.userAgent)) return false;
 
-  if (/edge/i.test(navigator.userAgent)) {
-    const m = navigator.userAgent.match(/edg\/(\d+)/i);
-    if (!m) return false;
-    const version = parseInt(m[1]);
-    return version >= 79;
-  }
+  // if (/edge/i.test(navigator.userAgent)) {
+  //   const m = navigator.userAgent.match(/edg\/(\d+)/i);
+  //   if (!m) return false;
+  //   const version = parseInt(m[1]);
+  //   return version >= 79;
+  // }
 
-  return true;
+  // return true;
 }
 
 export function supportLocalFontEnumeration(): boolean {

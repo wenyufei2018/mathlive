@@ -12,7 +12,13 @@ export function inject(
 
   if (!css) return null;
 
-  let root = element?.getRootNode() ?? document?.head;
+  // @wenyufei getRootNode compatible
+  let root;
+  if (element?.getRootNode) {
+    root = element?.getRootNode() ?? document?.head;
+  } else {
+    root = document?.head;
+  }
 
   if (!root) return null;
   if (root === document) root = document.head;
@@ -32,7 +38,8 @@ export function inject(
     // styleNode.setAttribute('media', 'only screen and (max-width : 1024px)')
     styleNode.dataset.id = id;
     styleNode.dataset.refcount = '1';
-    styleNode.append(document.createTextNode(css));
+    // @wenyufei document.createTextNode compatible
+    styleNode.innerHTML = css;
     root.appendChild(styleNode);
   }
 

@@ -303,8 +303,11 @@ export function delegateKeyboardEvents(
       // If the relatedTarget (the element that is gaining the focus)
       // is contained in our shadow host, ignore the blur event
       if (
+        // @wenyufei getRootNode compatible
+        (event.target as HTMLElement).getRootNode &&
         event.relatedTarget ===
-        ((event.target as HTMLElement).getRootNode() as any as ShadowRoot).host
+          ((event.target as HTMLElement).getRootNode() as any as ShadowRoot)
+            .host
       ) {
         event.preventDefault();
         event.stopPropagation();
